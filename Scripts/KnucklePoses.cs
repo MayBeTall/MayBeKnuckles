@@ -9,16 +9,31 @@ namespace MayBeKnuckles {
 		[System.Serializable]
 		public class Pose {
 			public string name;
-			[Range(-0.01f, 1)]
-			public float thumb;
-			[Range(-0.01f, 1)]
-			public float index;
-			[Range(-0.01f, 1)]
-			public float middle;
-			[Range(-0.01f, 1)]
-			public float ring;
-			[Range(-0.01f, 1)]
-			public float pinky;
+			[Space(10)]
+			[Range(0.0f, 1.0f)]
+			public float thumbMin = 0.0f;
+			[Range(0.0f, 1.0f)]
+			public float thumbMax = 1.0f;
+			[Space(10)]
+			[Range(0.0f, 1.0f)]
+			public float indexMin = 0.0f;
+			[Range(0.0f, 1.0f)]
+			public float indexMax = 1.0f;
+			[Space(10)]
+			[Range(0.0f, 1.0f)]
+			public float middleMin = 0.0f;
+			[Range(0.0f, 1.0f)]
+			public float middleMax = 1.0f;
+			[Space(10)]
+			[Range(0.0f, 1.0f)]
+			public float ringMin = 0.0f;
+			[Range(0.0f, 1.0f)]
+			public float ringMax = 1.0f;
+			[Space(10)]
+			[Range(0.0f, 1.0f)]
+			public float pinkyMin = 0.0f;
+			[Range(0.0f, 1.0f)]
+			public float pinkyMax = 1.0f;
 		}
 
 		public Pose[] poses;
@@ -36,13 +51,13 @@ namespace MayBeKnuckles {
 			currentPose = null;
 
 			foreach(Pose pose in poses) {
-				bool testIndex = Mathf.Abs(pose.index - fingerCurler.IndexCurl) < 0.20 || pose.index < 0;
-				bool testMiddle = Mathf.Abs(pose.middle - fingerCurler.MiddleCurl) < 0.20 || pose.middle < 0;
-				bool testRing = Mathf.Abs(pose.ring - fingerCurler.RingCurl) < 0.20 || pose.ring < 0;
-				bool testPinky = Mathf.Abs(pose.pinky - fingerCurler.PinkyCurl) < 0.20|| pose.pinky < 0;
-				bool testThumb = Mathf.Abs(pose.thumb - fingerCurler.ThumbCurl) < 0.20|| pose.thumb < 0;
+				bool testThumb = fingerCurler.ThumbCurl >= pose.thumbMin && fingerCurler.ThumbCurl <= pose.thumbMax;
+				bool testIndex = fingerCurler.IndexCurl >= pose.indexMin && fingerCurler.IndexCurl <= pose.indexMax;
+				bool testMiddle = fingerCurler.MiddleCurl >= pose.middleMin && fingerCurler.MiddleCurl <= pose.middleMax;
+				bool testRing = fingerCurler.RingCurl >= pose.ringMin && fingerCurler.RingCurl <= pose.ringMax;
+				bool testPinky = fingerCurler.PinkyCurl >= pose.pinkyMin && fingerCurler.PinkyCurl <= pose.pinkyMax;
 
-				if ( testIndex && testMiddle && testRing && testPinky && testThumb ) {
+				if ( testThumb && testIndex && testMiddle && testRing && testPinky ) {
 					currentPose = pose;
 					return;
 				}
