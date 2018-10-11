@@ -2,6 +2,8 @@
 ## A collection of experiments for Valve's Knuckles EV3s
 Documention? What's that? I haven't slept and it's 6AM.
 
+Want to talk? See updates? Join this project's Discord server: https://discord.gg/N3fEC2f
+
 ### Requirements
 Unity 2018
 SteamVR Unity Plugin v2.0.1 - [link](https://github.com/ValveSoftware/steamvr_unity_plugin/releases)
