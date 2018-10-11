@@ -8,7 +8,7 @@ SteamVR Unity Plugin v2.0.1 - [link](https://github.com/ValveSoftware/steamvr_un
 
 
 ### KnucklePoses
-[![](http://img.youtube.com/vi/xfsD7XdSDuE/0.jpg)](https://www.youtube.com/watch?v=xfsD7XdSDuE "Knuckles EV3 Finger Pose Matching")
+[![](https://i.imgur.com/8wModys.gif)](https://i.imgur.com/8wModys.gifv "Animated")
 
 This script allows you to easily detect when the user makes certain poses with their fingers. Finger guns, flipping the bird, spider-man web shooting. It's all possible. Try it tonight! Or... today? I need sleep.
 
