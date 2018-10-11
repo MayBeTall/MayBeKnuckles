@@ -3,6 +3,7 @@
 Documention? What's that? I haven't slept and it's 6AM.
 
 ### Requirements
+Unity 2018
 SteamVR Unity Plugin v2.0.1 - [link](https://github.com/ValveSoftware/steamvr_unity_plugin/releases)
 
 
