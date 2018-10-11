@@ -2,6 +2,7 @@
 ## A collection of experiments for Valve's Knuckles EV3s
 Documention? What's that? I haven't slept and it's 6AM.
 
+## Discord Server
 Want to talk? See updates? Join this project's Discord server: https://discord.gg/N3fEC2f
 
 ### Requirements
