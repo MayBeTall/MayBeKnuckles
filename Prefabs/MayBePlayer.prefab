@@ -2480,51 +2480,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fe06752e393a141b02a46892a356c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 0}
   poses:
   - name: finger-gun
-    thumb: 0
-    index: 0
-    middle: 100
-    ring: 100
-    pinky: 100
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: '#*&%'
-    thumb: 0
-    index: 100
-    middle: 0
-    ring: 100
-    pinky: 100
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: spider-man
-    thumb: 0
-    index: 0
-    middle: 100
-    ring: 100
-    pinky: 0
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: peace
-    thumb: 0
-    index: 0
-    middle: 0
-    ring: 100
-    pinky: 100
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: one-million-dollars
-    thumb: 0
-    index: 100
-    middle: 100
-    ring: 100
-    pinky: 0
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   currentPose:
     name: 
-    thumb: 0
-    index: 0
-    middle: 0
-    ring: 0
-    pinky: 0
-  debugPose:
-    thumb: 0
-    index: 0
-    middle: 0
-    ring: 0
-    pinky: 0
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
 --- !u!114 &114164847064140708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2596,51 +2619,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fe06752e393a141b02a46892a356c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 0}
   poses:
   - name: finger-gun
-    thumb: 0
-    index: 0
-    middle: 100
-    ring: 100
-    pinky: 100
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: '#*&%'
-    thumb: 0
-    index: 100
-    middle: 0
-    ring: 100
-    pinky: 100
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: spider-man
-    thumb: 0
-    index: 0
-    middle: 100
-    ring: 100
-    pinky: 0
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: peace
-    thumb: 0
-    index: 0
-    middle: 0
-    ring: 100
-    pinky: 100
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   - name: one-million-dollars
-    thumb: 0
-    index: 100
-    middle: 100
-    ring: 100
-    pinky: 0
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
   currentPose:
     name: 
-    thumb: 0
-    index: 0
-    middle: 0
-    ring: 0
-    pinky: 0
-  debugPose:
-    thumb: 0
-    index: 0
-    middle: 0
-    ring: 0
-    pinky: 0
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 1
+    middleMin: 0
+    middleMax: 1
+    ringMin: 0
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 1
 --- !u!114 &114358672881984214
 MonoBehaviour:
   m_ObjectHideFlags: 1
