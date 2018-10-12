@@ -9,6 +9,8 @@ Want to talk? See updates? Join this project's Discord server: https://discord.g
 Unity 2018
 SteamVR Unity Plugin v2.0.1 - [link](https://github.com/ValveSoftware/steamvr_unity_plugin/releases)
 
+### KnuckleTyping
+Prototype keyboard for the Knuckles. It uses your pointer and middle finger as well as two action keys pressed by your thumbs. You need to set up a 'typing' action set with "Key1" and "Key2" bound to something. Then map it to the KnuckleTyping script. Key 1 on the left hand is for the first key of a cord and key 2 of the right hand is for the last key of a cord. Hold down the key to type an uppercase letter. 
 
 ### KnucklePoses
 [![](https://i.imgur.com/8wModys.gif)](https://i.imgur.com/8wModys.gifv "Animated")
