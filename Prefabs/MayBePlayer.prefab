@@ -813,6 +813,8 @@ GameObject:
   - component: {fileID: 4088553214924622}
   - component: {fileID: 114481604186930552}
   - component: {fileID: 114073855901794174}
+  - component: {fileID: 114656889659722060}
+  - component: {fileID: 114689915918808482}
   m_Layer: 0
   m_Name: mbk_vr_glove_left
   m_TagString: Untagged
@@ -1136,6 +1138,8 @@ GameObject:
   - component: {fileID: 4258433252178542}
   - component: {fileID: 114437728768295106}
   - component: {fileID: 114332919002830282}
+  - component: {fileID: 114509697698165222}
+  - component: {fileID: 114640410149106218}
   m_Layer: 0
   m_Name: mbk_vr_glove_right
   m_TagString: Untagged
@@ -1223,7 +1227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1723191034826920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.334, y: 0, z: 0}
+  m_LocalPosition: {x: -0.2508, y: 0.4604, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4075280097430692}
@@ -2485,57 +2489,68 @@ MonoBehaviour:
     thumbMin: 0
     thumbMax: 1
     indexMin: 0
-    indexMax: 1
-    middleMin: 0
+    indexMax: 0.413
+    middleMin: 0.847
     middleMax: 1
-    ringMin: 0
+    ringMin: 0.844
     ringMax: 1
-    pinkyMin: 0
+    pinkyMin: 0.851
     pinkyMax: 1
   - name: '#*&%'
     thumbMin: 0
     thumbMax: 1
-    indexMin: 0
+    indexMin: 0.802
     indexMax: 1
     middleMin: 0
-    middleMax: 1
-    ringMin: 0
+    middleMax: 0.128
+    ringMin: 0.805
     ringMax: 1
-    pinkyMin: 0
+    pinkyMin: 0.827
     pinkyMax: 1
   - name: spider-man
     thumbMin: 0
     thumbMax: 1
     indexMin: 0
-    indexMax: 1
-    middleMin: 0
+    indexMax: 0.343
+    middleMin: 0.871
     middleMax: 1
-    ringMin: 0
+    ringMin: 0.88
     ringMax: 1
     pinkyMin: 0
-    pinkyMax: 1
+    pinkyMax: 0.282
   - name: peace
     thumbMin: 0
     thumbMax: 1
     indexMin: 0
-    indexMax: 1
+    indexMax: 0.31
     middleMin: 0
-    middleMax: 1
-    ringMin: 0
+    middleMax: 0.327
+    ringMin: 0.839
     ringMax: 1
-    pinkyMin: 0
+    pinkyMin: 0.838
     pinkyMax: 1
   - name: one-million-dollars
-    thumbMin: 0
+    thumbMin: 0.842
     thumbMax: 1
-    indexMin: 0
+    indexMin: 0.819
     indexMax: 1
-    middleMin: 0
+    middleMin: 0.819
     middleMax: 1
-    ringMin: 0
+    ringMin: 0.822
     ringMax: 1
     pinkyMin: 0
-    pinkyMax: 1
+    pinkyMax: 0.323
+  - name: hang-ten
+    thumbMin: 0
+    thumbMax: 0.234
+    indexMin: 0.876
+    indexMax: 1
+    middleMin: 0.876
+    middleMax: 1
+    ringMin: 0.843
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 0.315
   currentPose:
     name: 
     thumbMin: 0
@@ -2624,57 +2639,68 @@ MonoBehaviour:
     thumbMin: 0
     thumbMax: 1
     indexMin: 0
-    indexMax: 1
-    middleMin: 0
+    indexMax: 0.413
+    middleMin: 0.847
     middleMax: 1
-    ringMin: 0
+    ringMin: 0.844
     ringMax: 1
-    pinkyMin: 0
+    pinkyMin: 0.851
     pinkyMax: 1
   - name: '#*&%'
     thumbMin: 0
     thumbMax: 1
-    indexMin: 0
+    indexMin: 0.802
     indexMax: 1
     middleMin: 0
-    middleMax: 1
-    ringMin: 0
+    middleMax: 0.128
+    ringMin: 0.805
     ringMax: 1
-    pinkyMin: 0
+    pinkyMin: 0.827
     pinkyMax: 1
   - name: spider-man
     thumbMin: 0
     thumbMax: 1
     indexMin: 0
-    indexMax: 1
-    middleMin: 0
+    indexMax: 0.343
+    middleMin: 0.871
     middleMax: 1
-    ringMin: 0
+    ringMin: 0.88
     ringMax: 1
     pinkyMin: 0
-    pinkyMax: 1
+    pinkyMax: 0.282
   - name: peace
     thumbMin: 0
     thumbMax: 1
     indexMin: 0
-    indexMax: 1
+    indexMax: 0.31
     middleMin: 0
-    middleMax: 1
-    ringMin: 0
+    middleMax: 0.327
+    ringMin: 0.839
     ringMax: 1
-    pinkyMin: 0
+    pinkyMin: 0.838
     pinkyMax: 1
   - name: one-million-dollars
-    thumbMin: 0
+    thumbMin: 0.842
     thumbMax: 1
-    indexMin: 0
+    indexMin: 0.819
     indexMax: 1
-    middleMin: 0
+    middleMin: 0.819
     middleMax: 1
-    ringMin: 0
+    ringMin: 0.822
     ringMax: 1
     pinkyMin: 0
-    pinkyMax: 1
+    pinkyMax: 0.323
+  - name: hang-ten
+    thumbMin: 0
+    thumbMax: 0.234
+    indexMin: 0.876
+    indexMax: 1
+    middleMin: 0.876
+    middleMax: 1
+    ringMin: 0.843
+    ringMax: 1
+    pinkyMin: 0
+    pinkyMax: 0.315
   currentPose:
     name: 
     thumbMin: 0
@@ -2778,6 +2804,74 @@ MonoBehaviour:
   onlySetRotations: 0
   skeletonBlend: 1
   mirroring: 2
+--- !u!114 &114509697698165222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923371147012906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa3d3f837c271d4d832c57d27dc5976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeleton: {fileID: 114437728768295106}
+  IndexCurl: 0
+  MiddleCurl: 0
+  RingCurl: 0
+  PinkyCurl: 0
+  ThumbCurl: 0
+--- !u!114 &114640410149106218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923371147012906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7d16f0bdc1a7d4685e12a3c1becb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poses: {fileID: 114332919002830282}
+  actionSet: {fileID: 11400000, guid: 0a933c241ed57564f9fc48eaacb7429e, type: 2}
+  cast: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
+  fingerTipEffectPrefab: {fileID: 1673693650811414, guid: 82492970eb215594d968c044d92141b6,
+    type: 2}
+  fingerTipRotationYOffset: 90
+--- !u!114 &114656889659722060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723191034826920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa3d3f837c271d4d832c57d27dc5976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeleton: {fileID: 114481604186930552}
+  IndexCurl: 0
+  MiddleCurl: 0
+  RingCurl: 0
+  PinkyCurl: 0
+  ThumbCurl: 0
+--- !u!114 &114689915918808482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723191034826920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7d16f0bdc1a7d4685e12a3c1becb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poses: {fileID: 114073855901794174}
+  actionSet: {fileID: 11400000, guid: 0a933c241ed57564f9fc48eaacb7429e, type: 2}
+  cast: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
+  fingerTipEffectPrefab: {fileID: 1673693650811414, guid: 82492970eb215594d968c044d92141b6,
+    type: 2}
+  fingerTipRotationYOffset: 270
 --- !u!114 &114695070394385416
 MonoBehaviour:
   m_ObjectHideFlags: 1
