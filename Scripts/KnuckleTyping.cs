@@ -11,6 +11,8 @@ namespace MayBeKnuckles {
 	public class KnuckleTyping : MonoBehaviour {
 		public FingerCurler leftCurl;
 		public FingerCurler rightCurl;
+		[Range(0.3f, 1.0f)]
+		public float fingerOpenTriggerAmmount = 0.5f;
 
 		public TextMesh output;
 
@@ -233,7 +235,7 @@ namespace MayBeKnuckles {
 			leftKey1Touch =  Key1Touch.GetState(SteamVR_Input_Sources.LeftHand);
 			leftKey1 = leftKey1 ?  leftKey1 : leftKey1Down;
 
-			if ( leftKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > 0.3f ) {
+			if ( leftKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > fingerOpenTriggerAmmount ) {
 				leftKey1Shift = leftKey1Shift ? leftKey1Shift : Key1.GetState(SteamVR_Input_Sources.LeftHand);
 			}
 
@@ -247,7 +249,7 @@ namespace MayBeKnuckles {
 			leftKey2Touch =  Key2Touch.GetState(SteamVR_Input_Sources.LeftHand);
 			leftKey2 = leftKey2 ?  leftKey2 : leftKey2Down;
 
-			if ( leftKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > 0.3f ) {
+			if ( leftKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > fingerOpenTriggerAmmount ) {
 				leftKey2Shift = leftKey2Shift ? leftKey2Shift : Key2.GetState(SteamVR_Input_Sources.LeftHand);
 			}
 
@@ -261,7 +263,7 @@ namespace MayBeKnuckles {
 			rightKey1Touch =  Key1Touch.GetState(SteamVR_Input_Sources.RightHand);
 			rightKey1 = rightKey1 ?  rightKey1 : rightKey1Down;
 
-			if ( rightKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > 0.3f ) {
+			if ( rightKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > fingerOpenTriggerAmmount ) {
 				rightKey1Shift = rightKey1Shift ? rightKey1Shift : Key1.GetState(SteamVR_Input_Sources.RightHand);
 			}
 
@@ -275,7 +277,7 @@ namespace MayBeKnuckles {
 			rightKey2Touch =  Key2Touch.GetState(SteamVR_Input_Sources.RightHand);
 			rightKey2 = rightKey2 ?  rightKey2 : rightKey2Down;
 
-			if ( rightKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > 0.3f ) {
+			if ( rightKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > fingerOpenTriggerAmmount ) {
 				rightKey2Shift = rightKey2Shift ? rightKey2Shift : Key2.GetState(SteamVR_Input_Sources.RightHand);
 			}
 
