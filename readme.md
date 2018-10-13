@@ -3,7 +3,7 @@
 Documention? What's that? I haven't slept and it's 6AM.
 
 ## Discord Server
-Want to talk? See updates? Join this project's Discord server: https://discord.gg/N3fEC2f
+Interested in the Kuckles? Here's a Discord server: https://discord.gg/N3fEC2f
 
 ### Requirements
 Unity 2018
