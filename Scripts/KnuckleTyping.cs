@@ -240,7 +240,9 @@ namespace MayBeKnuckles {
 			}
 
 			if ( ! leftKey1Down && leftKey1 ) {
-				typedKey = currentCord.getChar(0, leftKey1Shift);
+				if (currentCord != null) {
+					typedKey = currentCord.getChar(0, leftKey1Shift);
+				}
 				leftKey1Shift = false;
 				leftKey1 = false;
 			}
@@ -254,7 +256,9 @@ namespace MayBeKnuckles {
 			}
 
 			if ( ! leftKey2Down && leftKey2 ) {
-				typedKey = currentCord.getChar(1, leftKey2Shift);
+				if (currentCord != null) {
+					typedKey = currentCord.getChar(1, leftKey2Shift);
+				}
 				leftKey2Shift = false;
 				leftKey2 = false;
 			}
@@ -268,7 +272,9 @@ namespace MayBeKnuckles {
 			}
 
 			if ( ! rightKey1Down && rightKey1 ) {
-				typedKey = currentCord.getChar(2, rightKey1Shift);
+				if (currentCord != null) {
+					typedKey = currentCord.getChar(2, rightKey1Shift);
+				}
 				rightKey1Shift = false;
 				rightKey1 = false;
 			}
@@ -282,7 +288,9 @@ namespace MayBeKnuckles {
 			}
 
 			if ( ! rightKey2Down && rightKey2 ) {
-				typedKey = currentCord.getChar(3, rightKey2Shift);
+				if (currentCord != null) {
+					typedKey = currentCord.getChar(3, rightKey2Shift);
+				}
 				rightKey2Shift = false;
 				rightKey2 = false;
 			}
