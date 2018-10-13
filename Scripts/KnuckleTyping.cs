@@ -12,7 +12,7 @@ namespace MayBeKnuckles {
 		public FingerCurler leftCurl;
 		public FingerCurler rightCurl;
 		[Range(0.3f, 1.0f)]
-		public float fingerOpenTriggerAmmount = 0.5f;
+		public float fingerClosedTriggerAmmount = 0.5f;
 
 		public TextMesh output;
 
@@ -170,13 +170,14 @@ namespace MayBeKnuckles {
 		// Use this for initialization
 		void Start () {
 			actionSet.ActivateSecondary();
-			Cords.Add( Gestures.XXXX_XXXX, new Cord("ABCD") );
-			Cords.Add( Gestures.XXXI_IXXX, new Cord("EFGH") );
-			Cords.Add( Gestures.XXII_IIXX, new Cord("HIJK") );
-			Cords.Add( Gestures.XIII_IIIX, new Cord("LMNO") );
-			Cords.Add( Gestures.IIII_IIII, new Cord("PQRS") );
-			Cords.Add( Gestures.XXXI_XXXX, new Cord("TUVW") );
-			Cords.Add( Gestures.XXXX_IXXX, new Cord("YXYZ") );
+			// e t a o i n s r h l d c u m f p g w y b v k x j q z
+			Cords.Add( Gestures.XXXX_XXXX, new Cord("AETO") );
+			Cords.Add( Gestures.XXXI_IXXX, new Cord("SINR") );
+			Cords.Add( Gestures.XXII_IIXX, new Cord("DHLC") );
+			Cords.Add( Gestures.XIII_IIIX, new Cord("FUMP") );
+			Cords.Add( Gestures.IIII_IIII, new Cord("YGWB") );
+			Cords.Add( Gestures.XXXI_XXXX, new Cord("XVKJ") );
+			Cords.Add( Gestures.XXXX_IXXX, new Cord("QQZZ") );
 		}
 		
 		// Update is called once per frame
@@ -188,14 +189,14 @@ namespace MayBeKnuckles {
 		}
 
 		private void updateFingers() {
-			fingers[0] = leftCurl.PinkyCurl < 0.6f;
-			fingers[1] = leftCurl.RingCurl < 0.6f;
-			fingers[2] = leftCurl.MiddleCurl < 0.6f;
-			fingers[3] = leftCurl.IndexCurl < 0.6f;
-			fingers[4] = rightCurl.IndexCurl < 0.6f;
-			fingers[5] = rightCurl.MiddleCurl < 0.6f;
-			fingers[6] = rightCurl.RingCurl < 0.6f;
-			fingers[7] = rightCurl.PinkyCurl < 0.6f;
+			fingers[0] = leftCurl.PinkyCurl < fingerClosedTriggerAmmount;
+			fingers[1] = leftCurl.RingCurl < fingerClosedTriggerAmmount;
+			fingers[2] = leftCurl.MiddleCurl < fingerClosedTriggerAmmount;
+			fingers[3] = leftCurl.IndexCurl < fingerClosedTriggerAmmount;
+			fingers[4] = rightCurl.IndexCurl < fingerClosedTriggerAmmount;
+			fingers[5] = rightCurl.MiddleCurl < fingerClosedTriggerAmmount;
+			fingers[6] = rightCurl.RingCurl < fingerClosedTriggerAmmount;
+			fingers[7] = rightCurl.PinkyCurl < fingerClosedTriggerAmmount;
 		}
 
 		private void updateGesture() {
@@ -235,7 +236,7 @@ namespace MayBeKnuckles {
 			leftKey1Touch =  Key1Touch.GetState(SteamVR_Input_Sources.LeftHand);
 			leftKey1 = leftKey1 ?  leftKey1 : leftKey1Down;
 
-			if ( leftKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > fingerOpenTriggerAmmount ) {
+			if ( leftKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > 0.3f ) {
 				leftKey1Shift = leftKey1Shift ? leftKey1Shift : Key1.GetState(SteamVR_Input_Sources.LeftHand);
 			}
 
@@ -251,7 +252,7 @@ namespace MayBeKnuckles {
 			leftKey2Touch =  Key2Touch.GetState(SteamVR_Input_Sources.LeftHand);
 			leftKey2 = leftKey2 ?  leftKey2 : leftKey2Down;
 
-			if ( leftKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > fingerOpenTriggerAmmount ) {
+			if ( leftKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.LeftHand) ) > 0.3f ) {
 				leftKey2Shift = leftKey2Shift ? leftKey2Shift : Key2.GetState(SteamVR_Input_Sources.LeftHand);
 			}
 
@@ -263,12 +264,12 @@ namespace MayBeKnuckles {
 				leftKey2 = false;
 			}
 
-			rightKey1Down =  Key1.GetState(SteamVR_Input_Sources.RightHand);
-			rightKey1Touch =  Key1Touch.GetState(SteamVR_Input_Sources.RightHand);
+			rightKey1Down =  Key2.GetState(SteamVR_Input_Sources.RightHand);
+			rightKey1Touch =  Key2Touch.GetState(SteamVR_Input_Sources.RightHand);
 			rightKey1 = rightKey1 ?  rightKey1 : rightKey1Down;
 
-			if ( rightKey1Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > fingerOpenTriggerAmmount ) {
-				rightKey1Shift = rightKey1Shift ? rightKey1Shift : Key1.GetState(SteamVR_Input_Sources.RightHand);
+			if ( rightKey1Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > 0.3f ) {
+				rightKey1Shift = rightKey1Shift ? rightKey1Shift : Key2.GetState(SteamVR_Input_Sources.RightHand);
 			}
 
 			if ( ! rightKey1Down && rightKey1 ) {
@@ -279,12 +280,12 @@ namespace MayBeKnuckles {
 				rightKey1 = false;
 			}
 
-			rightKey2Down =  Key2.GetState(SteamVR_Input_Sources.RightHand);
-			rightKey2Touch =  Key2Touch.GetState(SteamVR_Input_Sources.RightHand);
+			rightKey2Down =  Key1.GetState(SteamVR_Input_Sources.RightHand);
+			rightKey2Touch =  Key1Touch.GetState(SteamVR_Input_Sources.RightHand);
 			rightKey2 = rightKey2 ?  rightKey2 : rightKey2Down;
 
-			if ( rightKey2Down && ( Time.time - Key2.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > fingerOpenTriggerAmmount ) {
-				rightKey2Shift = rightKey2Shift ? rightKey2Shift : Key2.GetState(SteamVR_Input_Sources.RightHand);
+			if ( rightKey2Down && ( Time.time - Key1.GetTimeLastChanged(SteamVR_Input_Sources.RightHand) ) > 0.3f ) {
+				rightKey2Shift = rightKey2Shift ? rightKey2Shift : Key1.GetState(SteamVR_Input_Sources.RightHand);
 			}
 
 			if ( ! rightKey2Down && rightKey2 ) {
