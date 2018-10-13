@@ -3,7 +3,7 @@
 Documention? What's that? I haven't slept and it's 6AM.
 
 ## Discord Server
-Interested in the Kuckles? Here's a Discord server: https://discord.gg/N3fEC2f
+Interested in the Valve Kuckles? Here's a Knuckles focused Discord server I made: https://discord.gg/N3fEC2f
 
 ### Requirements
 Unity 2018
