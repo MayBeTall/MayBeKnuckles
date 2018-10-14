@@ -170,14 +170,6 @@ namespace MayBeKnuckles {
 		// Use this for initialization
 		void Start () {
 			actionSet.ActivateSecondary();
-			// e t a o i n s r h l d c u m f p g w y b v k x j q z
-			Cords.Add( Gestures.XXXX_XXXX, new Cord("AETO") );
-			Cords.Add( Gestures.XXXI_IXXX, new Cord("SINR") );
-			Cords.Add( Gestures.XXII_IIXX, new Cord("DHLC") );
-			Cords.Add( Gestures.XIII_IIIX, new Cord("FUMP") );
-			Cords.Add( Gestures.IIII_IIII, new Cord("YGWB") );
-			Cords.Add( Gestures.XXXI_XXXX, new Cord("XVKJ") );
-			Cords.Add( Gestures.XXXX_IXXX, new Cord("QQZZ") );
 		}
 		
 		// Update is called once per frame
@@ -186,6 +178,12 @@ namespace MayBeKnuckles {
 			updateFingers();
 			updateGesture();
 			UpdateCord();
+		}
+
+		public Cord addCord( Gestures gesture, string keys ) {
+			Cord cord = new Cord( keys );
+			Cords.Add( gesture, cord );
+			return cord;
 		}
 
 		private void updateFingers() {
@@ -221,6 +219,10 @@ namespace MayBeKnuckles {
 			} else {
 				currentCord = null;
 			}
+		}
+
+		public Dictionary<Gestures, Cord> getCords() {
+			return Cords;
 		}
 
 		public Gestures getGesture() {
