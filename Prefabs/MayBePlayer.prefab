@@ -276,6 +276,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4704128736825008}
+  - component: {fileID: 114100639988637570}
+  - component: {fileID: 114309119455982148}
   m_Layer: 0
   m_Name: MayBePlayer
   m_TagString: Untagged
@@ -391,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1315262801283012
 GameObject:
   m_ObjectHideFlags: 1
@@ -424,7 +426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1369547918204636
 GameObject:
   m_ObjectHideFlags: 1
@@ -814,7 +816,8 @@ GameObject:
   - component: {fileID: 114481604186930552}
   - component: {fileID: 114073855901794174}
   - component: {fileID: 114656889659722060}
-  - component: {fileID: 114689915918808482}
+  - component: {fileID: 114306516881460566}
+  - component: {fileID: 114075757101809426}
   m_Layer: 0
   m_Name: mbk_vr_glove_left
   m_TagString: Untagged
@@ -961,7 +964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1779329284480794
 GameObject:
   m_ObjectHideFlags: 1
@@ -1139,7 +1142,8 @@ GameObject:
   - component: {fileID: 114437728768295106}
   - component: {fileID: 114332919002830282}
   - component: {fileID: 114509697698165222}
-  - component: {fileID: 114640410149106218}
+  - component: {fileID: 114115216200920504}
+  - component: {fileID: 114329386171258742}
   m_Layer: 0
   m_Name: mbk_vr_glove_right
   m_TagString: Untagged
@@ -2551,6 +2555,28 @@ MonoBehaviour:
     ringMax: 1
     pinkyMin: 0
     pinkyMax: 0.315
+  - name: fist
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0.64
+    indexMax: 1
+    middleMin: 0.59
+    middleMax: 1
+    ringMin: 0.59
+    ringMax: 1
+    pinkyMin: 0.43
+    pinkyMax: 1
+  - name: shock
+    thumbMin: 0.31
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 0.29
+    middleMin: 0
+    middleMax: 0.32
+    ringMin: 0
+    ringMax: 0.4
+    pinkyMin: 0
+    pinkyMax: 0.39
   currentPose:
     name: 
     thumbMin: 0
@@ -2563,6 +2589,54 @@ MonoBehaviour:
     ringMax: 1
     pinkyMin: 0
     pinkyMax: 1
+--- !u!114 &114075757101809426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723191034826920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45046de65a49d324e9944b11321eac44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clawToggle: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
+  clawPrefab: {fileID: 1161860531988692, guid: 530ac47f5562ff34b8e662f8722161e9, type: 2}
+--- !u!114 &114100639988637570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166975531496308}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b99d2a1ba281b94ba7f4d872a18991e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftCurl: {fileID: 114656889659722060}
+  rightCurl: {fileID: 114509697698165222}
+  fingerClosedTriggerAmmount: 0.741
+  output: {fileID: 0}
+  typedKey: 0
+  lastTypedKey: 0
+  actionSet: {fileID: 11400000, guid: c51f5e64551b7a242a53a5e7eb402220, type: 2}
+  Key1: {fileID: 11400000, guid: d0f51146ac64ffd4a85b3fd9668241ef, type: 2}
+  Key1Touch: {fileID: 11400000, guid: fc27a83106721dc4db5835c55c95aa5c, type: 2}
+  Key2: {fileID: 11400000, guid: dd61df9e444e4004e8646f05b329b116, type: 2}
+  Key2Touch: {fileID: 11400000, guid: 2f8f3af806250df49a7aedd510411802, type: 2}
+--- !u!114 &114115216200920504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923371147012906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45046de65a49d324e9944b11321eac44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clawToggle: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
+  clawPrefab: {fileID: 1161860531988692, guid: 530ac47f5562ff34b8e662f8722161e9, type: 2}
 --- !u!114 &114164847064140708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2623,6 +2697,54 @@ MonoBehaviour:
   - {x: -1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: 1.275}
   - {x: 1.65, y: 0.01, z: 1.275}
+--- !u!114 &114306516881460566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723191034826920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7d16f0bdc1a7d4685e12a3c1becb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionSet: {fileID: 0}
+  cast: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
+  castLightning: {fileID: 11400000, guid: ee2dc4723acfb414894745f30356954a, type: 2}
+  spiritGunPrefab: {fileID: 1673693650811414, guid: 82492970eb215594d968c044d92141b6,
+    type: 2}
+  shockPrefab: {fileID: 1970577446381228, guid: 98e009ef7ad83ad4999274237f940255,
+    type: 2}
+--- !u!114 &114309119455982148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166975531496308}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110110109c86021438f27c3b53cf2514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typing: {fileID: 114100639988637570}
+--- !u!114 &114329386171258742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923371147012906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7d16f0bdc1a7d4685e12a3c1becb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionSet: {fileID: 0}
+  cast: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
+  castLightning: {fileID: 11400000, guid: ee2dc4723acfb414894745f30356954a, type: 2}
+  spiritGunPrefab: {fileID: 1673693650811414, guid: 82492970eb215594d968c044d92141b6,
+    type: 2}
+  shockPrefab: {fileID: 1970577446381228, guid: 98e009ef7ad83ad4999274237f940255,
+    type: 2}
 --- !u!114 &114332919002830282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2701,6 +2823,28 @@ MonoBehaviour:
     ringMax: 1
     pinkyMin: 0
     pinkyMax: 0.315
+  - name: fist
+    thumbMin: 0
+    thumbMax: 1
+    indexMin: 0.64
+    indexMax: 1
+    middleMin: 0.59
+    middleMax: 1
+    ringMin: 0.59
+    ringMax: 1
+    pinkyMin: 0.43
+    pinkyMax: 1
+  - name: shock
+    thumbMin: 0.31
+    thumbMax: 1
+    indexMin: 0
+    indexMax: 0.29
+    middleMin: 0
+    middleMax: 0.32
+    ringMin: 0
+    ringMax: 0.4
+    pinkyMin: 0
+    pinkyMax: 0.39
   currentPose:
     name: 
     thumbMin: 0
@@ -2777,7 +2921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonAction: {fileID: 11400000, guid: b6677f234bb3024438d203975f3f3523, type: 2}
   inputSource: 2
-  rangeOfMotion: 1
+  rangeOfMotion: 0
   skeletonRoot: {fileID: 4590678467637466}
   origin: {fileID: 0}
   updatePose: 1
@@ -2797,7 +2941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonAction: {fileID: 11400000, guid: c88363d7773dfa546b92b1d19957e2e0, type: 2}
   inputSource: 1
-  rangeOfMotion: 1
+  rangeOfMotion: 0
   skeletonRoot: {fileID: 4925559470928830}
   origin: {fileID: 0}
   updatePose: 1
@@ -2821,23 +2965,6 @@ MonoBehaviour:
   RingCurl: 0
   PinkyCurl: 0
   ThumbCurl: 0
---- !u!114 &114640410149106218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923371147012906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7d16f0bdc1a7d4685e12a3c1becb08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poses: {fileID: 114332919002830282}
-  actionSet: {fileID: 11400000, guid: 0a933c241ed57564f9fc48eaacb7429e, type: 2}
-  cast: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
-  fingerTipEffectPrefab: {fileID: 1673693650811414, guid: 82492970eb215594d968c044d92141b6,
-    type: 2}
-  fingerTipRotationYOffset: 90
 --- !u!114 &114656889659722060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2855,23 +2982,6 @@ MonoBehaviour:
   RingCurl: 0
   PinkyCurl: 0
   ThumbCurl: 0
---- !u!114 &114689915918808482
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723191034826920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7d16f0bdc1a7d4685e12a3c1becb08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poses: {fileID: 114073855901794174}
-  actionSet: {fileID: 11400000, guid: 0a933c241ed57564f9fc48eaacb7429e, type: 2}
-  cast: {fileID: 11400000, guid: cec85f8319a78814193f1bdfc86275d7, type: 2}
-  fingerTipEffectPrefab: {fileID: 1673693650811414, guid: 82492970eb215594d968c044d92141b6,
-    type: 2}
-  fingerTipRotationYOffset: 270
 --- !u!114 &114695070394385416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2902,7 +3012,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767058087143044}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5890e3cad70bea64d91aef9145ba3454, type: 3}
   m_Name: 

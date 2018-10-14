@@ -113,7 +113,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1854929783199288}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -121,7 +121,7 @@ Transform:
   - {fileID: 4626243204886720}
   m_Father: {fileID: 4073121118056286}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4547927783033394
 Transform:
   m_ObjectHideFlags: 1
@@ -217,8 +217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glowParticles: {fileID: 198226623426489428}
   blastParticles: {fileID: 198292629829976416}
-  snap: {fileID: 4506770968246342}
-  target: {fileID: 0}
 --- !u!198 &198226623426489428
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -783,7 +781,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 90
     size3D: 0
     rotation3D: 0
     gravityModifier:

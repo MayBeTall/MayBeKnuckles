@@ -7,21 +7,23 @@ namespace MayBeKnuckles {
 	 * and KnucklePoses.
 	 */
 	public class KnuckleMagic : MonoBehaviour {
-		public KnucklePoses poses;
+		private KnucklePoses poses;
+		private SteamVR_Behaviour_Skeleton skeleton;
 		private SteamVR_Input_Sources hand;
 
-		[SteamVR_DefaultActionSet("magic")]
-        public SteamVR_ActionSet actionSet;
+		public SteamVR_ActionSet actionSet;
 
         [SteamVR_DefaultAction("Squeeze")]
         public SteamVR_Action_Single cast;
 
-		public GameObject fingerTipEffectPrefab;
-		private GameObject fingerTipEffect;
-		private SpiritGunGlow fingerTipGlow;
-		public float fingerTipRotationYOffset;
+		[SteamVR_DefaultAction("castLightning")]
+        public SteamVR_Action_Boolean castLightning;
 
-		private Transform fingerTip;
+		public GameObject spiritGunPrefab;
+		private SpiritGunGlow spiritGunEffect;
+
+		public GameObject shockPrefab;
+		private GameObject[] shockObjects = new GameObject[5];
 
 		private float castForce;
 		private float spiritGunCooldown;
@@ -30,16 +32,43 @@ namespace MayBeKnuckles {
 		// Use this for initialization
 		void Start () {
 			actionSet.ActivateSecondary();
-			hand = GetComponent<SteamVR_Behaviour_Skeleton>().inputSource;
-			fingerTip = GetComponent<SteamVR_Behaviour_Skeleton>().indexTip;
-			if ( fingerTipEffectPrefab != null ) {
-				fingerTipEffect = Instantiate(fingerTipEffectPrefab, fingerTip.position, fingerTip.rotation);
-				fingerTipGlow = fingerTipEffect.GetComponent<SpiritGunGlow>();
-				fingerTipGlow.target = fingerTip;
-				fingerTipGlow.snap.localEulerAngles = new Vector3(fingerTipGlow.snap.localEulerAngles.x, fingerTipRotationYOffset, fingerTipGlow.snap.localEulerAngles.z);
+			poses = GetComponent<KnucklePoses>();
+			skeleton = GetComponent<SteamVR_Behaviour_Skeleton>();
+			hand = skeleton.inputSource;
+			if ( spiritGunPrefab != null ) {
+				GameObject spiritGun = Instantiate(spiritGunPrefab, skeleton.GetBonePosition( SteamVR_Skeleton_JointIndexes.indexTip ),  skeleton.GetBoneRotation( SteamVR_Skeleton_JointIndexes.indexTip ) );
+				spiritGunEffect = spiritGun.GetComponent<SpiritGunGlow>();
+				spiritGunEffect.transform.parent = skeleton.GetBone( SteamVR_Skeleton_JointIndexes.indexTip );
+			}
+			if ( shockPrefab != null ) {
+				shockObjects[0] = Instantiate(shockPrefab, skeleton.GetBonePosition( SteamVR_Skeleton_JointIndexes.indexTip ),  skeleton.GetBoneRotation( SteamVR_Skeleton_JointIndexes.indexTip ) );
+				shockObjects[0].transform.parent =  skeleton.GetBone( SteamVR_Skeleton_JointIndexes.indexTip );
+				shockObjects[0].SetActive(false);
+
+				shockObjects[1] = Instantiate(shockPrefab, skeleton.GetBonePosition( SteamVR_Skeleton_JointIndexes.middleTip ),  skeleton.GetBoneRotation( SteamVR_Skeleton_JointIndexes.middleTip ) );
+				shockObjects[1].transform.parent =  skeleton.GetBone( SteamVR_Skeleton_JointIndexes.middleTip );
+				shockObjects[1].SetActive(false);
+
+				shockObjects[2] = Instantiate(shockPrefab, skeleton.GetBonePosition( SteamVR_Skeleton_JointIndexes.ringTip ),  skeleton.GetBoneRotation( SteamVR_Skeleton_JointIndexes.ringTip ) );
+				shockObjects[2].transform.parent =  skeleton.GetBone( SteamVR_Skeleton_JointIndexes.ringTip );
+				shockObjects[2].SetActive(false);
+
+				shockObjects[3] = Instantiate(shockPrefab, skeleton.GetBonePosition( SteamVR_Skeleton_JointIndexes.pinkyTip ),  skeleton.GetBoneRotation( SteamVR_Skeleton_JointIndexes.pinkyTip ) );
+				shockObjects[3].transform.parent =  skeleton.GetBone( SteamVR_Skeleton_JointIndexes.pinkyTip );
+				shockObjects[3].SetActive(false);
+
+				shockObjects[4] = Instantiate(shockPrefab, skeleton.GetBonePosition( SteamVR_Skeleton_JointIndexes.thumbTip ),  skeleton.GetBoneRotation( SteamVR_Skeleton_JointIndexes.thumbTip ) );
+				shockObjects[4].transform.parent =  skeleton.GetBone( SteamVR_Skeleton_JointIndexes.thumbTip );
+				shockObjects[4].SetActive(false);
+
+				if (hand == SteamVR_Input_Sources.LeftHand) {
+					foreach ( GameObject shockObject in shockObjects ) {
+						shockObject.transform.localScale = new Vector3(1, 1, 1);
+					}
+				}
 			}
 		}
-		
+
 		// Update is called once per frame
 		void Update () {
 			castForce = cast.GetAxis( hand );
@@ -48,16 +77,30 @@ namespace MayBeKnuckles {
 			}
 			
 			if ( castForce > 0.1f && poses.currentPose != null ) {
-				if ( poses.currentPose.name == "finger-gun" && spiritGunCooldown <= 0 ) {
-					fingerTipGlow.fadeIn();
+				if ( poses.currentPose.name == "finger-gun" && spiritGunCooldown <= 0 && spiritGunEffect != null ) {
+					spiritGunEffect.fadeIn();
 					if ( castForce > 0.7f ) {
-						fingerTipGlow.fire();
+						spiritGunEffect.fire();
 					}
 				} else {
-					fingerTipGlow.fadeOut();
+					spiritGunEffect.fadeOut();
 				}
 			} else {
-				fingerTipGlow.fadeOut();
+				spiritGunEffect.fadeOut();
+			}
+
+			if ( poses.currentPose != null && poses.currentPose.name == "shock" && shockObjects[0] != null && castLightning.GetState( hand ) ) {
+				if ( ! shockObjects[0].activeSelf ) {
+					foreach ( GameObject shockObject in shockObjects ) {
+						shockObject.SetActive(true);
+					}
+				}
+			} else {
+				if ( shockObjects[0].activeSelf ) {
+					foreach ( GameObject shockObject in shockObjects ) {
+						shockObject.SetActive(false);
+					}
+				}
 			}
 		}
 	}
